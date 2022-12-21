@@ -1,26 +1,78 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inter-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/inter-regular.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/inter-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/inter-regular.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../fonts/inter-regular.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/inter-regular.svg#Inter")
+      format("svg"); /* Legacy iOS */
+}
+/* inter-700 - latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/inter-700.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/inter-700.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/inter-700.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/inter-700.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/inter-700.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/inter-700.svg#Inter") format("svg"); /* Legacy iOS */
+}
+
 /* Defaults */
 :root {
-  --font-family: -apple-system, system-ui, sans-serif;
-  --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+  --font-family: "Inter", serif;
+  --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+    Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+    Courier, monospace;
 }
 
 /* Theme colors */
 :root {
   --color-gray-20: #e0e0e0;
-  --color-gray-50: #C0C0C0;
+  --color-gray-50: #c0c0c0;
   --color-gray-90: #333;
 
   --background-color: #fff;
 
   --text-color: var(--color-gray-90);
   --text-color-link: #082840;
-  --text-color-link-visited: #17050F;
+  --text-color-link-visited: #17050f;
+
+  /* Retrowave / Synthwave colors */
+  /* Sony Dynamicron T-120 VHS */
+  /**
+    Working color combinations:
+    - With bg as paper:
+      - black, red, purple
+    - With bg as yellow:
+      - black
+    - With bg as red:
+      - paper
+    - With bg as purple:
+      - paper
+    - With bg as black:
+      - paper, yellow
+  */
+  --paper: #f2eee3;
+  --yellow: #fec52e;
+  --red: #b81937;
+  --purple: #af01cf;
+  --black: #10110b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-gray-20: #e0e0e0;
-    --color-gray-50: #C0C0C0;
+    --color-gray-50: #c0c0c0;
     --color-gray-90: #dad8d8;
 
     /* --text-color is assigned to --color-gray-_ above */
@@ -30,7 +82,6 @@
     --background-color: #15202b;
   }
 }
-
 
 /* Global stylesheet */
 * {
@@ -109,7 +160,7 @@ pre {
   -ms-hyphens: none;
   hyphens: none;
   padding: 1em;
-  margin: .5em 0;
+  margin: 0.5em 0;
   background-color: #f6f6f6;
 }
 code {
@@ -174,8 +225,8 @@ code {
   word-spacing: -0.5px;
 }
 .postlist-link {
-  padding-left: .25em;
-  padding-right: .25em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
   text-underline-position: from-font;
   text-underline-offset: 0;
   text-decoration-thickness: 1px;
@@ -187,7 +238,6 @@ code {
   font-size: 1.1875em; /* 19px /16 */
   font-weight: 700;
 }
-
 
 /* Tags */
 .post-tag {
@@ -242,7 +292,7 @@ a[href].post-tag:focus {
   font-family: sans-serif;
   text-decoration: none;
   font-style: normal;
-  margin-left: .1em;
+  margin-left: 0.1em;
 }
 a[href].direct-link,
 a[href].direct-link:visited {
