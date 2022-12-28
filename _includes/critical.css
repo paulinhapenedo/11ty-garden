@@ -3,13 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("assets/fonts/inter-regular.eot");
-  src: local(""),
-    url("assets/fonts/inter-regular.eot?#iefix") format("embedded-opentype"),
-    url("assets/fonts/inter-regular.woff2") format("woff2"),
-    url("assets/fonts/inter-regular.woff") format("woff"),
-    url("assets/fonts/inter-regular.ttf") format("truetype"),
-    url("assets/fonts/inter-regular.svg#Inter") format("svg");
+  src: url("assets/fonts/inter-regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -17,13 +11,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("assets/fonts/inter-700.eot");
-  src: local(""),
-    url("assets/fonts/inter-700.eot?#iefix") format("embedded-opentype"),
-    url("assets/fonts/inter-700.woff2") format("woff2"),
-    url("assets/fonts/inter-700.woff") format("woff"),
-    url("assets/fonts/inter-700.ttf") format("truetype"),
-    url("assets/fonts/inter-700.svg#Inter") format("svg");
+  src: url("assets/fonts/inter-700.woff2") format("woff2");
 }
 
 /*!
