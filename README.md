@@ -19,6 +19,6 @@ More commands can be found in the `package.json` file.
 ## Tech stack
 
 - [Eleventy](https://www.11ty.dev/) (with [Nunjucks](https://mozilla.github.io/nunjucks/) as templating language)
-- Pure CSS (leveraging CSS Variables)
+- Pure CSS (leveraging CSS Variables) with SASS for bundling
 - [Prism](https://prismjs.com/) as syntax highlighter
 - [Netlify](https://www.netlify.com/) for deploy
