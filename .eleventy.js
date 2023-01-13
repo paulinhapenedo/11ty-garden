@@ -11,9 +11,8 @@ const CleanCSS = require("clean-css");
 
 module.exports = function (eleventyConfig) {
   // Copy the `img` and `css` folders to the output
-  eleventyConfig.addPassthroughCopy("./assets/img");
-  eleventyConfig.addPassthroughCopy("./assets/css");
-  eleventyConfig.addPassthroughCopy("./assets/fonts");
+  eleventyConfig.addPassthroughCopy("./src/assets/img");
+  eleventyConfig.addPassthroughCopy("./src/assets/fonts");
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
@@ -99,10 +98,13 @@ module.exports = function (eleventyConfig) {
     ghostMode: false,
   });
 
-  /* minify css code */
+  /* minify inline css */
   eleventyConfig.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
   });
+
+  /* watch SASS files updates */
+  eleventyConfig.addWatchTarget("./src/assets/sass/");
 
   return {
     // Control which files Eleventy will process
@@ -131,7 +133,7 @@ module.exports = function (eleventyConfig) {
 
     // These are all optional (defaults are shown):
     dir: {
-      input: ".",
+      input: "src",
       includes: "_includes",
       data: "_data",
       output: "_site",
