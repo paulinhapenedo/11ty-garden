@@ -3,21 +3,18 @@
 @use "tokens/spaces";
 @use "tokens/types";
 
+@use "reset";
+
+@use "components/header";
+
 :root {
   --background-color: var(--paper);
   --text-color: var(--black);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
+  @media (prefers-color-scheme: dark) {
     --text-color: var(--paper);
     --background-color: var(--black);
   }
-}
-
-/* Global stylesheet */
-* {
-  box-sizing: border-box;
 }
 
 html,
@@ -29,10 +26,6 @@ body {
   background-color: var(--background-color);
 }
 
-p:last-child {
-  margin-bottom: 0;
-}
-
 .wrapper {
   padding-right: 1rem;
   padding-left: 1rem;
@@ -42,14 +35,6 @@ p:last-child {
   width: clamp(16rem, 93vw, 75rem);
 }
 
-.logo > a {
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    path {
-      fill: var(--paper);
-    }
-  }
+a {
+  color: var(--text-color);
 }

@@ -1,0 +1,28 @@
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 2rem;
+  align-items: center;
+}
+
+.logo {
+  > a {
+    text-decoration: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    path {
+      fill: var(--paper);
+    }
+  }
+}
+
+.nav {
+  justify-self: flex-end;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
