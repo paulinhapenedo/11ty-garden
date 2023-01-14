@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul:where([role="list"], [role="tablist"]) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
