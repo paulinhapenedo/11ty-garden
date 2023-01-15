@@ -20,22 +20,7 @@
     <link href="{{ '/assets/img/owl-dark.png' | url }}" rel="icon" media="(prefers-color-scheme: dark)"/>
   </head>
   <body>
-    <header class="wrapper header">
-      <h1 class="logo">
-        <a href="{{ '/' | url }}" aria-label="Homepage">
-          {% include "components/logo.njk" %}
-        </a>
-      </h1>
-      <nav class="nav">
-        <ul role="list" class="nav-list">
-          {%- for entry in collections.all | eleventyNavigation %}
-            <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}">
-              <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-            </li>
-          {%- endfor %}
-        </ul>
-      </nav>
-    </header>
+    {% include "components/header.njk" %}
 
     <main class="wrapper {% if templateClass %}{{ templateClass }}{% endif %}">
       {{ content | safe }}
