@@ -6,6 +6,8 @@
 }
 
 .logo {
+  margin-bottom: 0;
+
   > a {
     text-decoration: none;
   }
@@ -25,4 +27,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
+}
+
+.nav-link {
+  text-decoration-thickness: 0.2em;
+  text-underline-offset: 0.4em;
+
+  &:hover {
+    text-decoration-color: var(--red);
+
+    @media (prefers-color-scheme: dark) {
+      text-decoration-color: var(--yellow);
+    }
+  }
 }
