@@ -1,10 +1,17 @@
 ---
 layout: layouts/home.njk
 ---
-{% set maxPosts = collections.blog.length | min(5) %}
-<h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}
-</h1>
+<section class="flow introduction">
+  <h1>Hello, I'm Paula.</h1>
+  <p>I am a software developer that focuses on building interfaces for digital products using HTML, CSS and JavaScript.
+  </p>
+  <p>This is my digital garden where I write about things to better understand them.</p>
 
-{% set postslist = collections.blog | head(-maxPosts) %}
-{% set postslistCounter = collections.blog | length %}
-{% include "postslist.njk" %}
+  {% set maxPosts = collections.blog.length | min(5) %}
+  <h2>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}
+  </h2>
+
+  {% set postslist = collections.blog | head(-maxPosts) %}
+  {% set postslistCounter = collections.blog | length %}
+  {% include "postslist.njk" %}
+</section>

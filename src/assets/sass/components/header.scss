@@ -1,8 +1,10 @@
 .header {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 2rem;
+  grid-gap: var(--gutter);
   align-items: center;
+  margin-block-start: var(--space-m);
+  margin-block-end: var(--space-m-l);
 }
 
 .logo {
@@ -26,18 +28,10 @@
 .nav-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
+  gap: var(--space-m);
 }
 
 .nav-link {
   text-decoration-thickness: 0.2em;
   text-underline-offset: 0.4em;
-
-  &:hover {
-    text-decoration-color: var(--red);
-
-    @media (prefers-color-scheme: dark) {
-      text-decoration-color: var(--yellow);
-    }
-  }
 }

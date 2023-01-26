@@ -5,7 +5,9 @@
 
 @use "reset";
 
+@use "components/links";
 @use "components/header";
+@use "components/home";
 
 :root {
   --background-color: var(--paper);
@@ -17,22 +19,27 @@
   }
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: var(--font-family);
-  color: var(--text-color);
-  background-color: var(--background-color);
-}
-
 body {
   font-size: var(--step-0);
 }
 
+.flow > * + * {
+  margin-top: var(--space-s-m);
+}
+
+.flow :is(pre, pre + *, figure, figure + *, h2, h3, h4) {
+  margin-top: var(--space-l-xl);
+}
+
+:is(h1, h2, h3) {
+  display: flex;
+  gap: 1ch;
+  line-height: 1.2;
+}
+
 .wrapper {
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding-right: var(--space-s);
+  padding-left: var(--space-s);
   margin-left: auto;
   margin-right: auto;
   position: relative;

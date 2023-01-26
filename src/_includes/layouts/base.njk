@@ -14,7 +14,7 @@
     <meta name="description" content="{{ description or metadata.description }}">
     <meta name="generator" content="{{ eleventy.generator }}">
     <link rel="stylesheet" href="{{ '/assets/css/index.css' | url }}">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/rss+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
     <link href="{{ '/assets/img/owl-light.png' | url }}" rel="icon" media="(prefers-color-scheme: light)"/>
     <link href="{{ '/assets/img/owl-dark.png' | url }}" rel="icon" media="(prefers-color-scheme: dark)"/>
@@ -26,8 +26,6 @@
       {{ content | safe }}
     </main>
 
-    <footer>
-      Owl by IronSV from <a href="https://thenounproject.com/browse/icons/term/owl/" target="_blank" title="Owl Icons">Noun Project</a>
-    </footer>
+    {% include "components/footer.njk" %}
   </body>
 </html>

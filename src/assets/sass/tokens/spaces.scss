@@ -137,4 +137,6 @@
     ((var(--fc-s-min) / 16) * 1rem) + (var(--fc-s-max) - var(--fc-s-min)) *
       var(--fluid-bp)
   );
+
+  --gutter: var(--space-s-m);
 }
