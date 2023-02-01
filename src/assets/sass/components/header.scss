@@ -14,11 +14,11 @@
     text-decoration: none;
   }
 
-  @media (prefers-color-scheme: dark) {
-    path {
-      fill: var(--paper);
-    }
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   path {
+  //     fill: var(--paper);
+  //   }
+  // }
 }
 
 .nav {

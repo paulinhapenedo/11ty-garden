@@ -5,8 +5,8 @@ a {
   &:hover {
     text-decoration-color: var(--red);
 
-    @media (prefers-color-scheme: dark) {
-      text-decoration-color: var(--yellow);
-    }
+    // @media (prefers-color-scheme: dark) {
+    //   text-decoration-color: var(--yellow);
+    // }
   }
 }

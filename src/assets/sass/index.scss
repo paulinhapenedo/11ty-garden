@@ -13,10 +13,11 @@
   --background-color: var(--paper);
   --text-color: var(--black);
 
-  @media (prefers-color-scheme: dark) {
-    --text-color: var(--paper);
-    --background-color: var(--black);
-  }
+  /** I'll enable dark mode after some more tweaks */
+  // @include darkMode {
+  //   --text-color: var(--paper);
+  //   --background-color: var(--black);
+  // }
 }
 
 body {
