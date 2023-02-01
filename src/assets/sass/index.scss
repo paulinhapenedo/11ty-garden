@@ -8,6 +8,7 @@
 @use "components/links";
 @use "components/header";
 @use "components/home";
+@use "components/footer";
 
 :root {
   --background-color: var(--paper);
@@ -39,6 +40,9 @@ body {
 }
 
 .wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr min-content;
+  height: 100vh;
   padding-right: var(--space-s);
   padding-left: var(--space-s);
   margin-left: auto;

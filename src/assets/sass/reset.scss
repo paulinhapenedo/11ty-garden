@@ -12,7 +12,6 @@ body {
 }
 
 blockquote,
-body,
 dd,
 dl,
 figure,
@@ -44,4 +43,5 @@ h6,
 li,
 figcaption {
   max-inline-size: 60ch;
+  line-height: 1.5;
 }

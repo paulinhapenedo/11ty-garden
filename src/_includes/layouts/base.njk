@@ -20,12 +20,14 @@
     <link href="{{ '/assets/img/owl-dark.png' | url }}" rel="icon" media="(prefers-color-scheme: dark)"/>
   </head>
   <body>
-    {% include "components/header.njk" %}
+    <div class="wrapper">
+      {% include "components/header.njk" %}
 
-    <main class="wrapper {% if templateClass %}{{ templateClass }}{% endif %}">
-      {{ content | safe }}
-    </main>
+      <main class="{% if templateClass %}{{ templateClass }}{% endif %}">
+        {{ content | safe }}
+      </main>
 
-    {% include "components/footer.njk" %}
+      {% include "components/footer.njk" %}
+    </div>
   </body>
 </html>
