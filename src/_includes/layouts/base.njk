@@ -23,7 +23,7 @@
     <div class="wrapper">
       {% include "components/header.njk" %}
 
-      <main class="{% if templateClass %}{{ templateClass }}{% endif %}">
+      <main class="flow {% if templateClass %}{{ templateClass }}{% endif %}">
         {{ content | safe }}
       </main>
 

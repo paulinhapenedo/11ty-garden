@@ -3,15 +3,13 @@ layout: layouts/home.njk
 ---
 <section class="flow introduction">
   <h1>Hello, I'm Paula.</h1>
-  <p>I am a software developer that focuses on building interfaces for digital products using HTML, CSS and JavaScript.
+  <p>I am a software engineer that focuses on building interfaces for digital products using HTML, CSS and JavaScript.
   </p>
   <p>This is my digital garden where I write about things to better understand them.</p>
 
-  {% set maxPosts = collections.blog.length | min(5) %}
-  <h2>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}
-  </h2>
+  <h2>Latest Posts</h2>
 
+  {% set maxPosts = 5 %}
   {% set postslist = collections.blog | head(-maxPosts) %}
-  {% set postslistCounter = collections.blog | length %}
   {% include "postslist.njk" %}
 </section>
