@@ -10,6 +10,11 @@
 @use "components/home";
 @use "components/footer";
 
+*:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+}
+
 :root {
   --background-color: var(--paper);
   --text-color: var(--black);
@@ -19,6 +24,11 @@
   //   --text-color: var(--paper);
   //   --background-color: var(--black);
   // }
+}
+
+::selection {
+  background: var(--black);
+  color: var(--paper);
 }
 
 body {
@@ -31,6 +41,64 @@ body {
 
 .flow :is(pre, pre + *, figure, figure + *, h2, h3, h4) {
   margin-top: var(--space-l-xl);
+}
+
+.prose {
+  --flow-space: var(--space-m-l);
+  line-height: 1.8;
+  max-width: 50rem;
+}
+
+.prose > img,
+.prose > table {
+  width: 100%;
+}
+
+.prose figure img {
+  border: 1px dashed var(--color-mid);
+  margin-inline: auto;
+}
+
+.prose ul li::marker {
+  color: var(--color-mid);
+  content: "- ";
+  font-weight: 700;
+}
+
+.prose :is(ol, ul) {
+  padding-inline-start: 1.85em;
+}
+
+.prose li + li {
+  margin-top: var(--space-s);
+}
+
+.prose :is(pre, pre + *, figure, figure + *, h2, h3, h4) {
+  --flow-space: var(--space-l-xl);
+}
+
+.prose h1 + * {
+  --flow-space: 0.5em;
+}
+
+.prose :is(h2 + *, h3 + *, h4 + *) {
+  --flow-space: var(--space-s);
+}
+
+@media (max-width: 49em) {
+  .prose a,
+  .prose > * {
+    word-wrap: break-word;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+@media (min-width: 50em) {
+  .prose :is(ul, ol) {
+    padding-inline-start: 0.15ch;
+  }
 }
 
 :is(h1, h2, h3) {
