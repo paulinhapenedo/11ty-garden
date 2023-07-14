@@ -4,9 +4,12 @@ permalink: /blog/
 eleventyNavigation:
   key: Blog
   order: 2
+templateClass: blog
 ---
 
-<h1>Blog</h1>
+<h1>Writings.</h1>
+<p>A collection of notes, thoughts and rants.</p>
 
-{% set postslist = collections.blog %}
+{% set maxPosts = 10 %}
+{% set postslist = collections.blog | head(-maxPosts) %}
 {% include "postslist.njk" %}
