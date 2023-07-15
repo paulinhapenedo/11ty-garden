@@ -11,6 +11,9 @@
           <a class="nav-link" href="{{ entry.url | url }}">{{ entry.title }}</a>
         </li>
       {%- endfor %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ metadata.feed.path | url }}">RSS Feed</a>
+      </li>
     </ul>
   </nav>
 </header>
