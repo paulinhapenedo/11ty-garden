@@ -8,8 +8,10 @@ templateClass: article
     <h1>{{ title }}</h1>
     <p class="article__date">
       Planted <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-      |
-      Last tended <time datetime="{{ updatedAt | htmlDateString }}">{{ updatedAt | readableDate }}</time>
+      {% if updatedAt %}
+        |
+        Last tended <time datetime="{{ updatedAt | htmlDateString }}">{{ updatedAt | readableDate }}</time>
+      {% endif %}
     </p>
     <section class="article__tags">
       {% include "components/tags.njk" %}
