@@ -1,4 +1,6 @@
 {%- set absolutePostUrl = page.url | absoluteUrl(metadata.url) %}
+{%- set pageTitle = title or renderData.title or metadata.title %}
+{%- set pageDescription = description or renderData.description or metadata.description %}
 
 <link rel="canonical" href="{{ absolutePostUrl }}">
 <meta name="generator" content="{{ eleventy.generator }}">
@@ -12,10 +14,14 @@
 <link href="{{ '/assets/img/owl-dark.png' | url }}" rel="icon" media="(prefers-color-scheme: dark)"/>
 <link rel="me" href="https://mastodon.social/{{ metadata.socialHandle }}">
 
-<title>{{ title or metadata.title }}</title>
-<meta name="description" content="{{ description or metadata.description }}">
+<title>{{ pageTitle }}
+  {% if pageTitle !== metadata.title %}- {{ metadata.title }}
+  {% endif %}
+</title>
+<meta name="description" content="{{ pageDescription }}">
 <meta name="robots" content="index, follow"/>
-<meta property="og:title" content="{{ title or renderData.title or metadata.title }}"/>
+<meta property="og:title" content="{{ pageTitle }}"/>
 <meta property="og:url" content="{{  absolutePostUrl }}"/>
-<meta property="og:description" content="{{ description or renderData.description }}"/>
+<meta property="og:description" content="{{ pageDescription }}"/>
 <meta property="og:type" content="website"/>
+<meta property="og:image" content="https://dynamic-og-image-generator.vercel.app//api/generate?title={{pageTitle}}&author={{metadata.author.name}}&websiteUrl={{metadata.url}}&theme=github"/>
