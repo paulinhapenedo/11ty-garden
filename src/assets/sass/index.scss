@@ -9,7 +9,7 @@
 @use "components/header";
 @use "components/home";
 @use "components/footer";
-@use "components/postslists";
+@use "components/tags";
 
 *:focus-visible {
   outline: 3px solid var(--red);

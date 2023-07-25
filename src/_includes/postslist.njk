@@ -4,11 +4,7 @@
       {% if post.data.title %}{{ post.data.title }}
       {% endif %}
     </a>
-    <p class="postlink__tag">Under
-    {% for tag in post.data.tags | filterTagList %}
-        {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-        <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-      {% endfor %}
-    </p>
+    {% set tags = post.data.tags %}
+    {% include "components/tags.njk" %}
   </article>
 {% endfor %}
