@@ -65,18 +65,17 @@ body {
   margin-inline: auto;
 }
 
-.prose ul li::marker {
-  color: var(--color-mid);
-  content: "- ";
-  font-weight: 700;
+.prose ul {
+  padding-inline-start: var(--gutter);
 }
 
-.prose :is(ol, ul) {
-  padding-inline-start: 1.85em;
-}
+.prose ol {
+  list-style: decimal-leading-zero;
+  padding-inline-start: calc(var(--gutter) + var(--space-xs));
 
-.prose li + li {
-  margin-top: var(--space-s);
+  > li::marker {
+    font-weight: 700;
+  }
 }
 
 .prose :is(pre, pre + *, figure, figure + *, h2, h3, h4) {
@@ -102,8 +101,12 @@ body {
 }
 
 @media (min-width: 50em) {
-  .prose :is(ul, ol) {
-    padding-inline-start: 0.15ch;
+  .prose ul {
+    padding-inline-start: 1.5ch;
+  }
+
+  .prose ol {
+    padding-inline-start: 2.7ch;
   }
 }
 
