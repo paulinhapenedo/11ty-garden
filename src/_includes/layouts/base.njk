@@ -12,15 +12,13 @@
     </style>
     {% include "components/head.njk" %}
   </head>
-  <body>
-    <div class="wrapper">
-      {% include "components/header.njk" %}
+  <body class="wrapper">
+    {% include "components/header.njk" %}
 
-      <main class="flow {% if templateClass %}{{ templateClass }}{% endif %}">
-        {{ content | safe }}
-      </main>
+    <main class="flow {% if templateClass %}{{ templateClass }}{% endif %}">
+      {{ content | safe }}
+    </main>
 
-      {% include "components/footer.njk" %}
-    </div>
+    {% include "components/footer.njk" %}
   </body>
 </html>
