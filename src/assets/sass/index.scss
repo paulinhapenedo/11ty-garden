@@ -139,3 +139,8 @@ blockquote {
   border-left: 7px solid var(--paper-dark);
   color: var(--paper-dark);
 }
+
+hr {
+  border: dashed 1px var(--paper-dark);
+  margin: var(--space-l) 0;
+}
