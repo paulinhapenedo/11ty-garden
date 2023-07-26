@@ -132,3 +132,10 @@ h1 {
   font-size: var(--step-4);
   margin-block-end: var(--space-s-m);
 }
+
+blockquote {
+  margin: var(--space-s-m) 0;
+  padding-left: var(--space-s-l);
+  border-left: 7px solid var(--paper-dark);
+  color: var(--paper-dark);
+}
