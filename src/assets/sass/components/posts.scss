@@ -1,3 +1,10 @@
+.article header {
+  margin-bottom: var(--space-xl-2xl);
+  padding-top: var(--space-s-l);
+  padding-bottom: var(--space-s-m);
+  border-bottom: solid 0.2em var(--black);
+}
+
 .article__tags {
   margin-bottom: var(--space-2xs-xs);
 }
