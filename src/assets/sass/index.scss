@@ -55,9 +55,24 @@ body {
   line-height: 1.8;
 }
 
-.prose > img,
-.prose > table {
-  width: 100%;
+.prose table {
+  display: block;
+  white-space: normal;
+  overflow-x: auto;
+  width: max-content;
+  max-width: 100vw;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  td,
+  th {
+    border: solid 1px var(--paper-darker);
+    padding: var(--space-xs);
+  }
+
+  > tbody tr:nth-child(odd) {
+    background-color: var(--paper-dark);
+  }
 }
 
 .prose img {
@@ -139,11 +154,11 @@ h1 {
 blockquote {
   margin: var(--space-s-m) 0;
   padding-left: var(--space-s-l);
-  border-left: 7px solid var(--paper-dark);
-  color: var(--paper-dark);
+  border-left: 7px solid var(--paper-darker);
+  color: var(--paper-darker);
 }
 
 hr {
-  border: dashed 1px var(--paper-dark);
+  border: dashed 1px var(--paper-darker);
   margin: var(--space-l) 0;
 }
