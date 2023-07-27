@@ -1,0 +1,8 @@
+<p class="tags">Under
+  {% for tag in tags | filterTagList %}
+    {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+    <a href="{{ tagUrl | url }}" class="tag">
+      {{ tag }}
+    </a>
+  {% endfor %}
+</p>

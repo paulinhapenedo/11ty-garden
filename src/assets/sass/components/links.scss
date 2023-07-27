@@ -4,6 +4,7 @@ a {
 
   &:hover {
     text-decoration-color: var(--red);
+    cursor: pointer;
 
     // @media (prefers-color-scheme: dark) {
     //   text-decoration-color: var(--yellow);

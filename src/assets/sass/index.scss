@@ -7,9 +7,11 @@
 
 @use "components/links";
 @use "components/header";
-@use "components/home";
 @use "components/footer";
-@use "components/postslists";
+@use "components/tags";
+
+@use "components/home";
+@use "components/posts";
 
 *:focus-visible {
   outline: 3px solid var(--red);
@@ -36,6 +38,10 @@ body {
   font-size: var(--step-0);
 }
 
+.flow {
+  flex: 1;
+}
+
 .flow > * + * {
   margin-top: var(--space-s-m);
 }
@@ -47,31 +53,44 @@ body {
 .prose {
   --flow-space: var(--space-m-l);
   line-height: 1.8;
-  max-width: 50rem;
 }
 
-.prose > img,
-.prose > table {
+.prose table {
+  display: block;
+  white-space: normal;
+  overflow-x: auto;
+  width: max-content;
+  max-width: 100vw;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  td,
+  th {
+    border: solid 1px var(--paper-darker);
+    padding: var(--space-xs);
+  }
+
+  > tbody tr:nth-child(odd) {
+    background-color: var(--paper-dark);
+  }
+}
+
+.prose img {
+  margin-inline: auto;
   width: 100%;
 }
 
-.prose figure img {
-  border: 1px dashed var(--color-mid);
-  margin-inline: auto;
+.prose ul {
+  padding-inline-start: var(--gutter);
 }
 
-.prose ul li::marker {
-  color: var(--color-mid);
-  content: "- ";
-  font-weight: 700;
-}
+.prose ol {
+  list-style: decimal-leading-zero;
+  padding-inline-start: calc(var(--gutter) + var(--space-xs));
 
-.prose :is(ol, ul) {
-  padding-inline-start: 1.85em;
-}
-
-.prose li + li {
-  margin-top: var(--space-s);
+  > li::marker {
+    font-weight: 700;
+  }
 }
 
 .prose :is(pre, pre + *, figure, figure + *, h2, h3, h4) {
@@ -97,8 +116,12 @@ body {
 }
 
 @media (min-width: 50em) {
-  .prose :is(ul, ol) {
-    padding-inline-start: 0.15ch;
+  .prose ul {
+    padding-inline-start: 1.5ch;
+  }
+
+  .prose ol {
+    padding-inline-start: 2.7ch;
   }
 }
 
@@ -109,15 +132,14 @@ body {
 }
 
 .wrapper {
-  display: grid;
-  grid-template-rows: auto 1fr min-content;
   height: 100vh;
-  padding-right: var(--space-s);
-  padding-left: var(--space-s);
-  margin-left: auto;
-  margin-right: auto;
+  padding-right: var(--gutter);
+  padding-left: var(--gutter);
+  margin-inline: auto;
   position: relative;
   width: clamp(16rem, 93vw, 75rem);
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -127,4 +149,16 @@ a {
 h1 {
   font-size: var(--step-4);
   margin-block-end: var(--space-s-m);
+}
+
+blockquote {
+  margin: var(--space-s-m) 0;
+  padding-left: var(--space-s-l);
+  border-left: 7px solid var(--paper-darker);
+  color: var(--paper-darker);
+}
+
+hr {
+  border: dashed 1px var(--paper-darker);
+  margin: var(--space-l) 0;
 }

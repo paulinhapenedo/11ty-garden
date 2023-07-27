@@ -1,31 +1,23 @@
 ---
 layout: layouts/base.njk
-templateClass: tmpl-post
+templateClass: prose
 ---
-<h1>{{ title }}</h1>
 
-<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-{%- for tag in tags | filterTagList %}
-  {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-  <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-{%- endfor %}
-
-{{ content | safe }}
-
-{%- if collections.blog %}
-  {%- set nextPost = collections.blog | getNextCollectionItem(page) %}
-  {%- set previousPost = collections.blog | getPreviousCollectionItem(page) %}
-  {%- if nextPost or previousPost %}
-    <hr>
-    <ul>
-      {%- if nextPost %}
-        <li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
-        </li>
+<article class="article">
+  <header>
+    <h1>{{ title }}</h1>
+    <p class="article__date">
+      Planted <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+      {% if updatedAt %}
+        |
+        Last tended <time datetime="{{ updatedAt | htmlDateString }}">{{ updatedAt | readableDate }}</time>
       {% endif %}
-      {%- if previousPost %}
-        <li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
-        </li>
-      {% endif %}
-    </ul>
-  {%- endif %}
-{%- endif %}
+    </p>
+    <section class="article__tags">
+      {% include "components/tags.njk" %}
+    </section>
+  </header>
+
+  {{ content | safe }}
+
+</article>
