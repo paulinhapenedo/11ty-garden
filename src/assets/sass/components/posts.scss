@@ -8,3 +8,47 @@
 .article__tags {
   margin-bottom: var(--space-2xs-xs);
 }
+
+.pagination {
+  display: grid;
+  background-color: var(--paper-dark);
+  padding: var(--gutter);
+  grid-template-columns: 1fr max-content;
+
+  @media (max-width: 49em) {
+    justify-content: space-between;
+
+    p {
+      display: none;
+    }
+  }
+
+  .pagination__number {
+    font-weight: 700;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  ol {
+    display: flex;
+    gap: calc(var(--gutter) * 2);
+    padding: 0;
+    margin: 0;
+
+    @media (max-width: 49em) {
+      width: 100%;
+      gap: 0;
+      justify-content: space-between;
+    }
+  }
+
+  li {
+    list-style-type: none; /* remove bullets */
+
+    &::before {
+      content: "\200B"; /* add zero-width space */
+    }
+  }
+}

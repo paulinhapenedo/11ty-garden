@@ -1,10 +1,8 @@
-{% for post in postslist | reverse %}
-  <article class="prose postlist-item">
-    <a href="{{ post.url | url }}" class="postlist-link">
-      {% if post.data.title %}{{ post.data.title }}
-      {% endif %}
-    </a>
-    {% set tags = post.data.tags %}
-    {% include "components/tags.njk" %}
-  </article>
-{% endfor %}
+<article class="prose postlist-item">
+  <a href="{{ post.url | url }}" class="postlist-link">
+    {% if post.data.title %}{{ post.data.title }}
+    {% endif %}
+  </a>
+  {% set tags = post.data.tags %}
+  {% include "components/tags.njk" %}
+</article>

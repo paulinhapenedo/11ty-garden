@@ -1,0 +1,46 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Blog
+  order: 2
+templateClass: blog
+pagination:
+  data: collections.blog
+  size: 8
+  reverse: true
+  alias: postslist
+---
+
+<h1>Writings.</h1>
+<p>A collection of notes, thoughts and rants.</p>
+
+{% for post in postslist %}
+  {% include "postslist.njk" %}
+{% endfor %}
+
+<div class="pagination">
+  <p>Showing <span class="pagination__number">{{ (pagination.pageNumber * pagination.size) + 1 }}</span> to
+  <span class="pagination__number">
+      {% if pagination.nextPageLink %}
+
+        {{ (pagination.pageNumber * pagination.size) + pagination.size }}
+      {% else %}
+        {{ collections.blog.length }}
+      {% endif %}
+    </span> of <span class="pagination__number">{{ collections.blog.length }}</span>
+  </p>
+  <nav aria-label="Pagination">
+    <ol>
+      {% if pagination.href.previous %}
+        <li>
+          <a href="{{pagination.href.previous}}">Previous Page</a>
+        </li>
+      {% endif %}
+      {% if pagination.href.next %}
+        <li>
+          <a href="{{pagination.href.next}}">Next Page</a>
+        </li>
+      {% endif %}
+    </ol>
+  </nav>
+</div>
