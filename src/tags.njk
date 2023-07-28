@@ -16,7 +16,8 @@ permalink: /tags/{{ tag | slugify }}/
 ---
 <h1>Tagged “{{ tag }}”</h1>
 
-{% set postslist = collections[ tag ] %}
-{% include "postslist.njk" %}
+{% for post in collections[tag] %}
+  {% include "postslist.njk" %}
+{% endfor %}
 
 <p>See <a href="{{ '/tags/' | url }}">all tags</a>.</p>

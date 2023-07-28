@@ -1,5 +1,10 @@
 ---
 layout: layouts/home.njk
+pagination:
+  data: collections.blog
+  size: 5
+  reverse: true
+  alias: postslist
 ---
 <section class="flow intro">
   <h1>Hello, I'm Paula.</h1>
@@ -10,6 +15,7 @@ layout: layouts/home.njk
   <h2>Latest Posts</h2>
 
   {% set maxPosts = 5 %}
-  {% set postslist = collections.blog | head(-maxPosts) %}
-  {% include "postslist.njk" %}
+  {% for post in postslist | head(-maxPosts) %}
+    {% include "postslist.njk" %}
+  {% endfor %}
 </section>
