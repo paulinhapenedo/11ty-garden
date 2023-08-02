@@ -1,8 +1,10 @@
-<p class="tags">Under
+{% if tags.length > 0 %}
+  <p class="tags">Under
   {% for tag in tags | filterTagList %}
-    {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-    <a href="{{ tagUrl | url }}" class="tag">
-      {{ tag }}
-    </a>
-  {% endfor %}
-</p>
+      {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+      <a href="{{ tagUrl | url }}" class="tag">
+        {{ tag }}
+      </a>
+    {% endfor %}
+  </p>
+{% endif %}
