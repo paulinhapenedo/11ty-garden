@@ -7,7 +7,7 @@
   "feed": {
     "subtitle": "I build interfaces for digital products. Welcome to my digital garden/playground.",
     "filename": "feed.xml",
-    "path": "/feed/feed.xml",
+    "path": "/feed.xml",
     "id": "https://paulapenedo.dev/"
   },
   "jsonfeed": {
